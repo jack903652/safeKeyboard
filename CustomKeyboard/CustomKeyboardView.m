@@ -89,7 +89,11 @@
         [view setValue:accessoryView forKey:@"inputAccessoryView"];
         _random = random;
         _textField = (UITextField *)view;
-        self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), SEPERATE_SPACE*5+ITEM_HEIGHT*4);
+        CGFloat delta_x = 0.0;
+        if ([UIScreen mainScreen].bounds.size.height ==812.0) {
+            delta_x = 34.0;
+        }
+        self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), SEPERATE_SPACE*5+ITEM_HEIGHT*4+delta_x);
         UICollectionViewFlowLayout *layout =[[UICollectionViewFlowLayout alloc] init];
         _collectionView =[[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
         [self addSubview:_collectionView];
