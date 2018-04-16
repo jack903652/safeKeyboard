@@ -11,6 +11,7 @@ typedef NS_OPTIONS(NSUInteger, CustomKeyboardType) {
     CustomKeyboardTypeLetter      = 1 << 0,
     CustomKeyboardTypeCharacters  = 1 << 1,
     CustomKeyboardTypeNumber      = 1 << 2,
+    CustomKeyboardTypeDigital     = 1 << 3,
 };
 @interface CustomInputAccessoryView : UIView
 @property(nonatomic,strong)UILabel *textLabel;

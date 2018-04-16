@@ -15,6 +15,7 @@
 #define SPECIAL_CHARACTERS @"!@#$%^&*()'\"=_:;?~|`+-\\/[]{},.<>"
 #define POT @"."
 #define ALT @"alt"
+#define PLACE_PLACER @""
 #define SPACE NSLocalizedStringFromTable(@"space", @"CustomKeyboard", nil)
 #define DELETE NSLocalizedStringFromTable(@"del", @"CustomKeyboard", nil)
 #define IDENTIFIER @"identifier"
@@ -152,6 +153,13 @@
         [_dataSource addObject:SPACE];
         [_dataSource addObject:DELETE];
         [_collectionView reloadData];
+    }else if (keyboardType&CustomKeyboardTypeDigital){
+        self.currentKeyboardType =CustomKeyboardTypeNumber;
+        [_dataSource removeAllObjects];
+        [_dataSource addObjectsFromArray:_numbers];
+        [_dataSource insertObject:PLACE_PLACER atIndex:9];
+        [_dataSource addObject:DELETE];
+        [_collectionView reloadData];
     }
 
 }
@@ -199,6 +207,8 @@
             self.textField.secureText = [temp substringToIndex:temp.length -1];;
             [self.textField deleteBackward];
         }
+    }else if ([text isEqualToString:PLACE_PLACER]){
+        
     }else{
         if (self.textField.secureText.length == self.length) {
             return;
@@ -220,7 +230,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     KeyboardCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:IDENTIFIER forIndexPath:indexPath];
     NSString *text = cell.textLabel.text = self.dataSource[indexPath.item];
-    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]) {
+    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]) {
         cell.backgroundColor = ITEM_DARK_COLOR;
     }else{
         cell.backgroundColor = ITEM_COLOR;
@@ -248,6 +258,8 @@
             return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
         }
     }else if (self.currentKeyboardType&CustomKeyboardTypeNumber){
+        return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
+    }else if (self.currentKeyboardType&CustomKeyboardTypeDigital){
         return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
     }
     return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
