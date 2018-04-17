@@ -90,6 +90,7 @@
         [view setValue:accessoryView forKey:@"inputAccessoryView"];
         _random = random;
         _textField = (UITextField *)view;
+//        _textField.isPlaintext = NO;
         CGFloat delta_x = 0.0;
         if ([UIScreen mainScreen].bounds.size.height ==812.0) {
             delta_x = 34.0;
@@ -200,7 +201,12 @@
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
         [temp appendString:@" "];
         self.textField.secureText = [NSString stringWithString:temp];
-        [self.textField insertText:@"•"];
+        if (self.textField.isPlaintext) {
+            [self.textField insertText:@" "];
+        }else{
+            [self.textField insertText:@"•"];
+        }
+        
     }else if ([text isEqualToString:DELETE]){
         if ([self.textField hasText]) {
             NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
@@ -217,7 +223,11 @@
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
         [temp appendString:x];
         self.textField.secureText = [NSString stringWithString:temp];
-        [self.textField insertText:@"•"];
+        if (self.textField.isPlaintext) {
+            [self.textField insertText:x];
+        }else {
+            [self.textField insertText:@"•"];
+        }
     }
 
 }

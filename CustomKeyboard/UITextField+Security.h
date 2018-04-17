@@ -10,4 +10,5 @@
 
 @interface UITextField (Security)
 @property(nonatomic,strong)NSString *secureText;
+@property(nonatomic,assign)BOOL isPlaintext;
 @end
