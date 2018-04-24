@@ -54,7 +54,7 @@
         
         _finishBtn =[UIButton buttonWithType:UIButtonTypeCustom];
         _finishBtn.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, 0, 50, 40);
-        [_finishBtn setTitle:NSLocalizedStringFromTable(@"finish", @"CustomKeyboard", nil) forState:UIControlStateNormal];
+        [_finishBtn setTitle:NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil) forState:UIControlStateNormal];
         [_finishBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _finishBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_finishBtn addTarget:self action:@selector(finishAction:) forControlEvents:UIControlEventTouchUpInside];
