@@ -5,6 +5,6 @@
   Created by bamq on 2017/6/1.
   Copyright © 2017年 Aresoft (Shanghai) Tech Co.,Ltd. All rights reserved.
 */
-"del" = "del";
-"space" = "space";
+"删除" = "del";
+"空格" = "space";
 "完成" = "finish";

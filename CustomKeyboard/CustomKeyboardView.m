@@ -16,8 +16,8 @@
 #define POT @"."
 #define ALT @"alt"
 #define PLACE_PLACER @""
-#define SPACE NSLocalizedStringFromTable(@"space", @"CustomKeyboard", nil)
-#define DELETE NSLocalizedStringFromTable(@"del", @"CustomKeyboard", nil)
+#define SPACE NSLocalizedStringFromTable(@"空格", @"CustomKeyboard", nil)
+#define DELETE NSLocalizedStringFromTable(@"删除", @"CustomKeyboard", nil)
 #define IDENTIFIER @"identifier"
 #define SEPERATE_SPACE 3.0
 #define ITEM_WIDTH ((CGRectGetWidth([UIScreen mainScreen].bounds)-SEPERATE_SPACE*11)/10.0)
