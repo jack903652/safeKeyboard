@@ -26,6 +26,8 @@
 #define BACKGROUND_COLOR [UIColor colorWithWhite:61./255 alpha:1]
 #define ITEM_COLOR [UIColor colorWithWhite:118./255 alpha:1]
 #define ITEM_DARK_COLOR [UIColor colorWithWhite:83./255 alpha:1]
+
+#define iPhoneX_series [UIScreen mainScreen].bounds.size.height == 812.0||[UIScreen mainScreen].bounds.size.height == 896.0
 @interface CustomKeyboardView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic,strong)UICollectionView *collectionView;
 
@@ -91,8 +93,9 @@
         _random = random;
         _textField = (UITextField *)view;
 //        _textField.isPlaintext = NO;
+
         CGFloat delta_x = 0.0;
-        if ([UIScreen mainScreen].bounds.size.height ==812.0) {
+        if (iPhoneX_series) {
             delta_x = 34.0;
         }
         self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), SEPERATE_SPACE*5+ITEM_HEIGHT*4+delta_x);
