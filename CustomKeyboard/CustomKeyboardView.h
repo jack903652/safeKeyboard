@@ -16,6 +16,20 @@
 #import <UIKit/UIKit.h>
 #import "CustomInputAccessoryView.h"
 @interface CustomKeyboardView : UIView<UIInputViewAudioFeedback>
+///背景颜色
+@property(nonatomic,strong)UIColor *cuBackgroundColor;
+///键盘背景颜色
+@property(nonatomic,strong)UIColor *cuItemColor;
+///键盘背景深色
+@property(nonatomic,strong)UIColor *cuItemDarkColor;
+///键盘颜色
+@property(nonatomic,strong)UIColor *cuKeyColor;
+///字体
+@property(nonatomic,strong)UIFont *cuKeyFont;
+///accessoryColor
+@property(nonatomic,strong)UIColor *accessoryColor;
+///accessoryFont
+@property(nonatomic,strong)UIFont *accessoryFont;
 
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title;
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title length:(NSInteger)length;

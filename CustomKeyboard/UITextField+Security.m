@@ -39,7 +39,7 @@ static char strKey;
     }else{
         NSMutableString *d = [NSMutableString stringWithString:@""];
         for (int i = 0 ; i<self.secureText.length; i++) {
-            [d appendString:@"•"];
+            [d appendString:ASTERISK];
         }
         self.text = d;
     }

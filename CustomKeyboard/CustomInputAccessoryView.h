@@ -15,6 +15,8 @@ typedef NS_OPTIONS(NSUInteger, CustomKeyboardType) {
 };
 @interface CustomInputAccessoryView : UIView
 @property(nonatomic,strong)UILabel *textLabel;
+@property(nonatomic,strong)UIButton *finishBtn;
+@property(nonatomic,strong)UIButton *changeTypeBtn;
 -(instancetype)initWithFrame:(CGRect)frame keyboardType:(CustomKeyboardType)keyboardType;
 -(void)finishBlock:(void (^)(void))block;
 @property(nonatomic,copy)void (^changeTypeBlock)(CustomKeyboardType);

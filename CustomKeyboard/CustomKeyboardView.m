@@ -202,12 +202,12 @@
         [collectionView reloadData];
     }else if ([text isEqualToString:SPACE]){
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
-        [temp appendString:@" "];
+        [temp appendString:WHITESPACE];
         self.textField.secureText = [NSString stringWithString:temp];
         if (self.textField.isPlaintext) {
-            [self.textField insertText:@" "];
+            [self.textField insertText:WHITESPACE];
         }else{
-            [self.textField insertText:@"•"];
+            [self.textField insertText:ASTERISK];
         }
         
     }else if ([text isEqualToString:DELETE]){
@@ -229,7 +229,7 @@
         if (self.textField.isPlaintext) {
             [self.textField insertText:x];
         }else {
-            [self.textField insertText:@"•"];
+            [self.textField insertText:ASTERISK];
         }
     }
 
@@ -242,11 +242,17 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     KeyboardCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:IDENTIFIER forIndexPath:indexPath];
+    if (self.cuKeyColor) {
+        cell.textLabel.textColor = self.cuKeyColor;
+    }
+    if (self.cuKeyFont) {
+        cell.textLabel.font = self.cuKeyFont;
+    }
     NSString *text = cell.textLabel.text = self.dataSource[indexPath.item];
     if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]) {
-        cell.backgroundColor = ITEM_DARK_COLOR;
+        cell.backgroundColor = self.cuItemDarkColor?self.cuItemDarkColor:ITEM_DARK_COLOR;
     }else{
-        cell.backgroundColor = ITEM_COLOR;
+        cell.backgroundColor =self.cuItemColor?self.cuItemColor:ITEM_COLOR;
         if (self.uppercase&&(self.currentKeyboardType&CustomKeyboardTypeLetter)) {
             cell.textLabel.text = [text uppercaseString];
         }
@@ -285,5 +291,43 @@
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return SEPERATE_SPACE-0.001;
+}
+
+-(void)setCuBackgroundColor:(UIColor *)cuBackgroundColor{
+    _cuBackgroundColor = cuBackgroundColor;
+    UIView *view = self.textField.inputAccessoryView;
+    view.backgroundColor = cuBackgroundColor;
+    self.collectionView.backgroundColor = cuBackgroundColor;
+}
+-(void)setCuItemColor:(UIColor *)cuItemColor{
+    _cuItemColor = cuItemColor;
+    [self.collectionView reloadData];
+}
+-(void)setCuItemDarkColor:(UIColor *)cuItemDarkColor{
+    _cuItemDarkColor = cuItemDarkColor;
+    [self.collectionView reloadData];
+}
+
+-(void)setCuKeyColor:(UIColor *)cuKeyColor{
+    _cuKeyColor = cuKeyColor;
+    [self.collectionView reloadData];
+}
+-(void)setCuKeyFont:(UIFont *)cuKeyFont{
+    _cuKeyFont = cuKeyFont;
+    [self.collectionView reloadData];
+}
+-(void)setAccessoryColor:(UIColor *)accessoryColor{
+    _accessoryColor = accessoryColor;
+    CustomInputAccessoryView *view = (CustomInputAccessoryView*)self.textField.inputAccessoryView;
+    view.textLabel.textColor = accessoryColor;
+    [view.finishBtn setTitleColor:accessoryColor forState:UIControlStateNormal];
+    [view.changeTypeBtn setTitleColor:accessoryColor forState:UIControlStateNormal];
+}
+-(void)setAccessoryFont:(UIFont *)accessoryFont{
+    _accessoryFont = accessoryFont;
+    CustomInputAccessoryView *view = (CustomInputAccessoryView*)self.textField.inputAccessoryView;
+    view.textLabel.font = accessoryFont;
+    view.finishBtn.titleLabel.font = accessoryFont;
+    view.changeTypeBtn.titleLabel.font = accessoryFont;
 }
 @end

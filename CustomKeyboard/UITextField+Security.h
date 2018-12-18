@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#define ASTERISK @"•"
+#define WHITESPACE @" "
 @interface UITextField (Security)
 @property(nonatomic,strong)NSString *secureText;
 @property(nonatomic,assign)BOOL isPlaintext;

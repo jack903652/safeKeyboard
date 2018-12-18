@@ -14,8 +14,6 @@
 
 @interface CustomInputAccessoryView()
 @property(nonatomic,copy)void (^finishBlock)(void);
-@property(nonatomic,strong)UIButton *finishBtn;
-@property(nonatomic,strong)UIButton *changeTypeBtn;
 @property(nonatomic,strong)NSMutableArray *keyboardTitles;
 @end
 @implementation CustomInputAccessoryView
