@@ -223,6 +223,9 @@
             return;
         }
         NSString *x= self.dataSource[indexPath.item];
+        if (self.uppercase) {
+            x = [x uppercaseString];
+        }
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
         [temp appendString:x];
         self.textField.secureText = [NSString stringWithString:temp];
