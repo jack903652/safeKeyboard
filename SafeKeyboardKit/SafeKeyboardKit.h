@@ -3,7 +3,7 @@
 //  SafeKeyboardKit
 //
 //  Created by bamq on 2018/12/18.
-//  Copyright © 2018 Aresoft (Shanghai) Tech Co.,Ltd. All rights reserved.
+//  Copyright © bamq. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

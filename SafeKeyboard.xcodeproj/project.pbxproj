@@ -13,8 +13,6 @@
 		391104BA1FD04BD700CCEF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391104B91FD04BD700CCEF5D /* Assets.xcassets */; };
 		391104BD1FD04BD700CCEF5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391104BB1FD04BD700CCEF5D /* LaunchScreen.storyboard */; };
 		391104C01FD04BD700CCEF5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104BF1FD04BD700CCEF5D /* main.m */; };
-		391104CA1FD04BD700CCEF5D /* SafeKeyboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104C91FD04BD700CCEF5D /* SafeKeyboardTests.m */; };
-		391104D51FD04BD700CCEF5D /* SafeKeyboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104D41FD04BD700CCEF5D /* SafeKeyboardUITests.m */; };
 		391104EF1FD04FA000CCEF5D /* CustomInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104E41FD04FA000CCEF5D /* CustomInputAccessoryView.m */; };
 		391104F01FD04FA000CCEF5D /* CustomKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104E71FD04FA000CCEF5D /* CustomKeyboardView.m */; };
 		391104F11FD04FA000CCEF5D /* CustomKeyboard.strings in Resources */ = {isa = PBXBuildFile; fileRef = 391104E81FD04FA000CCEF5D /* CustomKeyboard.strings */; };
@@ -38,20 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		391104C61FD04BD700CCEF5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 391104A51FD04BD700CCEF5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 391104AC1FD04BD700CCEF5D;
-			remoteInfo = SafeKeyboard;
-		};
-		391104D11FD04BD700CCEF5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 391104A51FD04BD700CCEF5D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 391104AC1FD04BD700CCEF5D;
-			remoteInfo = SafeKeyboard;
-		};
 		39127D0921C8BD0A00F452A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 391104A51FD04BD700CCEF5D /* Project object */;
@@ -86,12 +70,6 @@
 		391104BC1FD04BD700CCEF5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		391104BE1FD04BD700CCEF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391104BF1FD04BD700CCEF5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		391104C51FD04BD700CCEF5D /* SafeKeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeKeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		391104C91FD04BD700CCEF5D /* SafeKeyboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeKeyboardTests.m; sourceTree = "<group>"; };
-		391104CB1FD04BD700CCEF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		391104D01FD04BD700CCEF5D /* SafeKeyboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeKeyboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		391104D41FD04BD700CCEF5D /* SafeKeyboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeKeyboardUITests.m; sourceTree = "<group>"; };
-		391104D61FD04BD700CCEF5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391104E31FD04FA000CCEF5D /* CustomInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInputAccessoryView.h; sourceTree = "<group>"; };
 		391104E41FD04FA000CCEF5D /* CustomInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInputAccessoryView.m; sourceTree = "<group>"; };
 		391104E51FD04FA000CCEF5D /* CustomKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKeyboard.h; sourceTree = "<group>"; };
@@ -119,20 +97,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		391104C21FD04BD700CCEF5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		391104CD1FD04BD700CCEF5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		39127D0121C8BD0A00F452A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,8 +112,6 @@
 			children = (
 				391104E21FD04FA000CCEF5D /* CustomKeyboard */,
 				391104AF1FD04BD700CCEF5D /* SafeKeyboard */,
-				391104C81FD04BD700CCEF5D /* SafeKeyboardTests */,
-				391104D31FD04BD700CCEF5D /* SafeKeyboardUITests */,
 				39127D0521C8BD0A00F452A7 /* SafeKeyboardKit */,
 				391104AE1FD04BD700CCEF5D /* Products */,
 			);
@@ -159,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				391104AD1FD04BD700CCEF5D /* SafeKeyboard.app */,
-				391104C51FD04BD700CCEF5D /* SafeKeyboardTests.xctest */,
-				391104D01FD04BD700CCEF5D /* SafeKeyboardUITests.xctest */,
 				39127D0421C8BD0A00F452A7 /* SafeKeyboardKit.framework */,
 			);
 			name = Products;
@@ -180,24 +140,6 @@
 				391104BF1FD04BD700CCEF5D /* main.m */,
 			);
 			path = SafeKeyboard;
-			sourceTree = "<group>";
-		};
-		391104C81FD04BD700CCEF5D /* SafeKeyboardTests */ = {
-			isa = PBXGroup;
-			children = (
-				391104C91FD04BD700CCEF5D /* SafeKeyboardTests.m */,
-				391104CB1FD04BD700CCEF5D /* Info.plist */,
-			);
-			path = SafeKeyboardTests;
-			sourceTree = "<group>";
-		};
-		391104D31FD04BD700CCEF5D /* SafeKeyboardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				391104D41FD04BD700CCEF5D /* SafeKeyboardUITests.m */,
-				391104D61FD04BD700CCEF5D /* Info.plist */,
-			);
-			path = SafeKeyboardUITests;
 			sourceTree = "<group>";
 		};
 		391104E21FD04FA000CCEF5D /* CustomKeyboard */ = {
@@ -267,42 +209,6 @@
 			productReference = 391104AD1FD04BD700CCEF5D /* SafeKeyboard.app */;
 			productType = "com.apple.product-type.application";
 		};
-		391104C41FD04BD700CCEF5D /* SafeKeyboardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 391104DC1FD04BD700CCEF5D /* Build configuration list for PBXNativeTarget "SafeKeyboardTests" */;
-			buildPhases = (
-				391104C11FD04BD700CCEF5D /* Sources */,
-				391104C21FD04BD700CCEF5D /* Frameworks */,
-				391104C31FD04BD700CCEF5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				391104C71FD04BD700CCEF5D /* PBXTargetDependency */,
-			);
-			name = SafeKeyboardTests;
-			productName = SafeKeyboardTests;
-			productReference = 391104C51FD04BD700CCEF5D /* SafeKeyboardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		391104CF1FD04BD700CCEF5D /* SafeKeyboardUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 391104DF1FD04BD700CCEF5D /* Build configuration list for PBXNativeTarget "SafeKeyboardUITests" */;
-			buildPhases = (
-				391104CC1FD04BD700CCEF5D /* Sources */,
-				391104CD1FD04BD700CCEF5D /* Frameworks */,
-				391104CE1FD04BD700CCEF5D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				391104D21FD04BD700CCEF5D /* PBXTargetDependency */,
-			);
-			name = SafeKeyboardUITests;
-			productName = SafeKeyboardUITests;
-			productReference = 391104D01FD04BD700CCEF5D /* SafeKeyboardUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		39127D0321C8BD0A00F452A7 /* SafeKeyboardKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39127D0F21C8BD0A00F452A7 /* Build configuration list for PBXNativeTarget "SafeKeyboardKit" */;
@@ -334,16 +240,6 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
-					391104C41FD04BD700CCEF5D = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 391104AC1FD04BD700CCEF5D;
-					};
-					391104CF1FD04BD700CCEF5D = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 391104AC1FD04BD700CCEF5D;
-					};
 					39127D0321C8BD0A00F452A7 = {
 						CreatedOnToolsVersion = 10.1;
 						ProvisioningStyle = Automatic;
@@ -365,8 +261,6 @@
 			projectRoot = "";
 			targets = (
 				391104AC1FD04BD700CCEF5D /* SafeKeyboard */,
-				391104C41FD04BD700CCEF5D /* SafeKeyboardTests */,
-				391104CF1FD04BD700CCEF5D /* SafeKeyboardUITests */,
 				39127D0321C8BD0A00F452A7 /* SafeKeyboardKit */,
 			);
 		};
@@ -381,20 +275,6 @@
 				391104BA1FD04BD700CCEF5D /* Assets.xcassets in Resources */,
 				391104F11FD04FA000CCEF5D /* CustomKeyboard.strings in Resources */,
 				391104B81FD04BD700CCEF5D /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		391104C31FD04BD700CCEF5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		391104CE1FD04BD700CCEF5D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,22 +303,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		391104C11FD04BD700CCEF5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				391104CA1FD04BD700CCEF5D /* SafeKeyboardTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		391104CC1FD04BD700CCEF5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				391104D51FD04BD700CCEF5D /* SafeKeyboardUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		39127D0021C8BD0A00F452A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,16 +318,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		391104C71FD04BD700CCEF5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 391104AC1FD04BD700CCEF5D /* SafeKeyboard */;
-			targetProxy = 391104C61FD04BD700CCEF5D /* PBXContainerItemProxy */;
-		};
-		391104D21FD04BD700CCEF5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 391104AC1FD04BD700CCEF5D /* SafeKeyboard */;
-			targetProxy = 391104D11FD04BD700CCEF5D /* PBXContainerItemProxy */;
-		};
 		39127D0A21C8BD0A00F452A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 39127D0321C8BD0A00F452A7 /* SafeKeyboardKit */;
@@ -612,7 +466,7 @@
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
 				INFOPLIST_FILE = SafeKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -626,67 +480,9 @@
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
 				INFOPLIST_FILE = SafeKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		391104DD1FD04BD700CCEF5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9Q8EZY8PR;
-				INFOPLIST_FILE = SafeKeyboardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeKeyboard.app/SafeKeyboard";
-			};
-			name = Debug;
-		};
-		391104DE1FD04BD700CCEF5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9Q8EZY8PR;
-				INFOPLIST_FILE = SafeKeyboardTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboardTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SafeKeyboard.app/SafeKeyboard";
-			};
-			name = Release;
-		};
-		391104E01FD04BD700CCEF5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9Q8EZY8PR;
-				INFOPLIST_FILE = SafeKeyboardUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SafeKeyboard;
-			};
-			name = Debug;
-		};
-		391104E11FD04BD700CCEF5D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D9Q8EZY8PR;
-				INFOPLIST_FILE = SafeKeyboardUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Aresoft.SafeKeyboardUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SafeKeyboard;
 			};
 			name = Release;
 		};
@@ -711,7 +507,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aresoft.cn.SafeKeyboardKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboardKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -740,7 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aresoft.cn.SafeKeyboardKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboardKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -766,24 +562,6 @@
 			buildConfigurations = (
 				391104DA1FD04BD700CCEF5D /* Debug */,
 				391104DB1FD04BD700CCEF5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		391104DC1FD04BD700CCEF5D /* Build configuration list for PBXNativeTarget "SafeKeyboardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				391104DD1FD04BD700CCEF5D /* Debug */,
-				391104DE1FD04BD700CCEF5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		391104DF1FD04BD700CCEF5D /* Build configuration list for PBXNativeTarget "SafeKeyboardUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				391104E01FD04BD700CCEF5D /* Debug */,
-				391104E11FD04BD700CCEF5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

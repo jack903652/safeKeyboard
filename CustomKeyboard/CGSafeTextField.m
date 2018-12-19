@@ -3,7 +3,7 @@
 //  SafeKeyboard
 //
 //  Created by bamq on 2017/11/30.
-//  Copyright © 2017年 Aresoft (Shanghai) Tech Co.,Ltd. All rights reserved.
+//  Copyright © bamq. All rights reserved
 //
 
 #import "CGSafeTextField.h"

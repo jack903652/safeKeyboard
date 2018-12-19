@@ -3,7 +3,7 @@
 //  ASCustomKeyboard
 //
 //  Created by bamq on 2017/6/1.
-//  Copyright © 2017年 Aresoft (Shanghai) Tech Co.,Ltd. All rights reserved.
+//  Copyright © bamq. All rights reserved
 //
 
 #ifndef CustomKeyboard_h
