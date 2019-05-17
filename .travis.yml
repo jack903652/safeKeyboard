@@ -7,8 +7,8 @@ before_install:
 - env
 - xcodebuild -version
 - xcodebuild -showsdks
-- PROJECT=SafeKeyboard.xcodeproj
-- SCHEME=SafeKeyboard
+- PROJECT="SafeKeyboard.xcodeproj"
+- SCHEME="SafeKeyboard"
 
 script:
 - xcodebuild clean build -project "$PROJECT"  -scheme "$SCHEME"
