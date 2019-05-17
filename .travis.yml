@@ -7,10 +7,8 @@ before_install:
 - env
 - xcodebuild -version
 - xcodebuild -showsdks
-- xcpretty --version
 - PROJECT=SafeKeyboard.xcodeproj
 - SCHEME=SafeKeyboard
 
 script:
-- set -o pipefail
-- xcodebuild clean build -project "$PROJECT"  -scheme "$SCHEME" | xcpretty
+- xcodebuild clean build -project "$PROJECT"  -scheme "$SCHEME"
