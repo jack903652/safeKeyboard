@@ -27,7 +27,15 @@
 #define ITEM_COLOR [UIColor colorWithWhite:118./255 alpha:1]
 #define ITEM_DARK_COLOR [UIColor colorWithWhite:83./255 alpha:1]
 
-#define iPhoneX_series [UIScreen mainScreen].bounds.size.height == 812.0||[UIScreen mainScreen].bounds.size.height == 896.0
+#define iPhoneX_series ({\
+BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+    if ([UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom > 0) {\
+    isPhoneX = YES;\
+    }\
+}\
+isPhoneX;\
+})
 @interface CustomKeyboardView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property(nonatomic,strong)UICollectionView *collectionView;
 

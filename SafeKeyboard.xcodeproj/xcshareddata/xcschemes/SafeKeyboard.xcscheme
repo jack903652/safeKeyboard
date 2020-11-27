@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39127D0321C8BD0A00F452A7"
-               BuildableName = "SafeKeyboardKit.framework"
-               BlueprintName = "SafeKeyboardKit"
+               BlueprintIdentifier = "391104AC1FD04BD700CCEF5D"
+               BuildableName = "SafeKeyboard.app"
+               BlueprintName = "SafeKeyboard"
                ReferencedContainer = "container:SafeKeyboard.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,9 +26,39 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3911B5FC229FB1D0000AA1A3"
+               BuildableName = "SafeKeyboardUITests.xctest"
+               BlueprintName = "SafeKeyboardUITests"
+               ReferencedContainer = "container:SafeKeyboard.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3911B60A229FB1E1000AA1A3"
+               BuildableName = "SafeKeyboardTests.xctest"
+               BlueprintName = "SafeKeyboardTests"
+               ReferencedContainer = "container:SafeKeyboard.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "391104AC1FD04BD700CCEF5D"
+            BuildableName = "SafeKeyboard.app"
+            BlueprintName = "SafeKeyboard"
+            ReferencedContainer = "container:SafeKeyboard.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +72,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39127D0321C8BD0A00F452A7"
-            BuildableName = "SafeKeyboardKit.framework"
-            BlueprintName = "SafeKeyboardKit"
+            BlueprintIdentifier = "391104AC1FD04BD700CCEF5D"
+            BuildableName = "SafeKeyboard.app"
+            BlueprintName = "SafeKeyboard"
             ReferencedContainer = "container:SafeKeyboard.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +91,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39127D0321C8BD0A00F452A7"
-            BuildableName = "SafeKeyboardKit.framework"
-            BlueprintName = "SafeKeyboardKit"
+            BlueprintIdentifier = "391104AC1FD04BD700CCEF5D"
+            BuildableName = "SafeKeyboard.app"
+            BlueprintName = "SafeKeyboard"
             ReferencedContainer = "container:SafeKeyboard.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
