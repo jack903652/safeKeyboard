@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SafeKeyboard"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "3 SafeKeyboard,number,letter,special."
 
   # This description is used to generate tags and improve search results.
