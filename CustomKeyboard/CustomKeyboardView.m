@@ -14,7 +14,7 @@
 #define LETTERS @"qwertyuiopasdfghjklzxcvbnm"
 #define SPECIAL_CHARACTERS @"!@#$%^&*()'\"=_:;?~|`+-\\/[]{},.<>"
 #define POT @"."
-#define ALT @"alt"
+#define ALT @"Caps"
 #define PLACE_PLACER @""
 #define SPACE NSLocalizedStringFromTable(@"空格", @"CustomKeyboard", nil)
 #define DELETE NSLocalizedStringFromTable(@"删除", @"CustomKeyboard", nil)
