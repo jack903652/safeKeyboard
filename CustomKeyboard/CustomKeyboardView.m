@@ -209,6 +209,9 @@ isPhoneX;\
         self.uppercase = !self.uppercase;
         [collectionView reloadData];
     }else if ([text isEqualToString:SPACE]){
+        if (self.textField.secureText.length == self.length) {
+            return;
+        }
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
         [temp appendString:WHITESPACE];
         self.textField.secureText = [NSString stringWithString:temp];
