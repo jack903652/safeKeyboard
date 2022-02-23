@@ -213,7 +213,7 @@ isPhoneX;\
             return;
         }
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
-        [temp appendString:WHITESPACE];
+        [temp replaceCharactersInRange:[self selectedRange] withString:WHITESPACE];
         self.textField.secureText = [NSString stringWithString:temp];
         if (self.textField.isPlaintext) {
             [self.textField insertText:WHITESPACE];
@@ -224,7 +224,8 @@ isPhoneX;\
     }else if ([text isEqualToString:DELETE]){
         if ([self.textField hasText]) {
             NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
-            self.textField.secureText = [temp substringToIndex:temp.length -1];;
+            [temp replaceCharactersInRange:[self selectedRange] withString:@""];
+            self.textField.secureText = temp;
             [self.textField deleteBackward];
         }
     }else if ([text isEqualToString:PLACE_PLACER]){
@@ -238,7 +239,7 @@ isPhoneX;\
             x = [x uppercaseString];
         }
         NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
-        [temp appendString:x];
+        [temp replaceCharactersInRange:[self selectedRange] withString:x];
         self.textField.secureText = [NSString stringWithString:temp];
         if (self.textField.isPlaintext) {
             [self.textField insertText:x];
@@ -247,6 +248,17 @@ isPhoneX;\
         }
     }
 
+}
+
+/// 查找当前光标位置
+- (NSRange)selectedRange{
+    UITextPosition* beginning = self.textField.beginningOfDocument;
+    UITextRange* selectedRange = self.textField.selectedTextRange;
+    UITextPosition* selectionStart = selectedRange.start;
+    UITextPosition* selectionEnd = selectedRange.end;
+    const NSInteger location = [self.textField offsetFromPosition:beginning toPosition:selectionStart];
+    const NSInteger length = [self.textField offsetFromPosition:selectionStart toPosition:selectionEnd];
+    return NSMakeRange(location, length);
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
