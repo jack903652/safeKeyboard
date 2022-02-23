@@ -36,6 +36,7 @@
 		3913E4C221C8C5C10044960E /* UITextField+Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104ED1FD04FA000CCEF5D /* UITextField+Security.m */; };
 		3913E4C321C8C5C10044960E /* CGSafeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104F51FD04FC400CCEF5D /* CGSafeTextField.m */; };
 		3919123122642495008FF0BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919123022642495008FF0BC /* CoreGraphics.framework */; };
+		39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		39127D0721C8BD0A00F452A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3919123022642495008FF0BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3951A6DE22642D2F00FBDF96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeKeyboard.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		391104A41FD04BD700CCEF5D = {
 			isa = PBXGroup;
 			children = (
+				39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */,
 				391104E21FD04FA000CCEF5D /* CustomKeyboard */,
 				391104AF1FD04BD700CCEF5D /* SafeKeyboard */,
 				39127D0521C8BD0A00F452A7 /* SafeKeyboardKit */,
@@ -395,6 +398,7 @@
 				391104BA1FD04BD700CCEF5D /* Assets.xcassets in Resources */,
 				391104F11FD04FA000CCEF5D /* CustomKeyboard.strings in Resources */,
 				391104B81FD04BD700CCEF5D /* Main.storyboard in Resources */,
+				39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

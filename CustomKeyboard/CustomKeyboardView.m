@@ -224,7 +224,16 @@ isPhoneX;\
     }else if ([text isEqualToString:DELETE]){
         if ([self.textField hasText]) {
             NSMutableString *temp = [NSMutableString stringWithString:self.textField.secureText];
-            [temp replaceCharactersInRange:[self selectedRange] withString:@""];
+            NSRange range = [self selectedRange];
+            if (range.length == 0) {
+                if (range.location != 0) {
+                    NSString *x = [temp substringToIndex:range.location -1];
+                    NSString *y = [temp substringFromIndex:range.location];
+                    temp = [NSMutableString stringWithFormat:@"%@%@",x,y];
+                }
+            }else{
+                [temp replaceCharactersInRange:[self selectedRange] withString:@""];
+            }
             self.textField.secureText = temp;
             [self.textField deleteBackward];
         }
