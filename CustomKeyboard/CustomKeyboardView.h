@@ -29,6 +29,8 @@
 @property(nonatomic,strong)UIFont *cuKeyFont;
 ///accessoryColor
 @property(nonatomic,strong)UIColor *accessoryColor;
+///accessoryColor
+@property(nonatomic,strong)UIColor *accessoryBackgroundColor;
 ///accessoryFont
 @property(nonatomic,strong)UIFont *accessoryFont;
 

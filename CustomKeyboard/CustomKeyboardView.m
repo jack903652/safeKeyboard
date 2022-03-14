@@ -304,12 +304,18 @@ isPhoneX;\
     if ([text isEqualToString:ALT]) {
         cell.textLabel.hidden = YES;
         cell.imageView.hidden = NO;
-        cell.imageView.image = [UIImage imageNamed:@"s.png"];
-        cell.imageView.highlightedImage = [UIImage imageNamed:@"l.png"];
+        cell.imageView.image = [UIImage imageNamed:@"update.png"];
+        cell.imageView.highlightedImage = [UIImage imageNamed:@"update-1.png"];
+        cell.imageView.highlighted = self.uppercase;
+    }else if ([text isEqualToString:DELETE]){
+        cell.textLabel.hidden = YES;
+        cell.imageView.hidden = NO;
+        cell.imageView.image = [UIImage imageNamed:@"del.png"];
     }else{
         cell.textLabel.hidden = NO;
         cell.imageView.hidden = YES;
     }
+    
     if ([text isEqualToString:PLACE_PLACER]) {
         cell.hidden = YES;
     }else{
@@ -389,5 +395,10 @@ isPhoneX;\
     view.textLabel.font = accessoryFont;
     view.finishBtn.titleLabel.font = accessoryFont;
     view.changeTypeBtn.titleLabel.font = accessoryFont;
+}
+-(void)setAccessoryBackgroundColor:(UIColor *)accessoryBackgroundColor{
+    _accessoryBackgroundColor =accessoryBackgroundColor;
+    CustomInputAccessoryView *view = (CustomInputAccessoryView*)self.textField.inputAccessoryView;
+    view.backgroundColor = accessoryBackgroundColor;
 }
 @end

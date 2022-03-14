@@ -30,10 +30,14 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:_imageView];
-        NSArray *constraints3 =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
-        NSArray *constraints4 =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
+        NSArray *constraints3 =[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_imageView(30)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
+        NSArray *constraints4 =[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_imageView(30)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_imageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_imageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
         [self addConstraints:constraints3];
         [self addConstraints:constraints4];
+//        [self addConstraint:constraints5];
+//        [self addConstraint:constraints6];
         _imageView.hidden = YES;
     }
     return self;

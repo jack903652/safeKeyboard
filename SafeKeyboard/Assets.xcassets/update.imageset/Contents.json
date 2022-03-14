@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "update.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "截屏2022-03-14 下午1.35.57.png",
+      "filename" : "update@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "update@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
