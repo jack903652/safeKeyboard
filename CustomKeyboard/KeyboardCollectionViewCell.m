@@ -26,6 +26,15 @@
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 2.5;
+        
+        _imageView = [[UIImageView alloc] init];
+        _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self addSubview:_imageView];
+        NSArray *constraints3 =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
+        NSArray *constraints4 =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_imageView)];
+        [self addConstraints:constraints3];
+        [self addConstraints:constraints4];
+        _imageView.hidden = YES;
     }
     return self;
 }

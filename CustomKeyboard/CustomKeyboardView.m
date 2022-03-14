@@ -166,11 +166,20 @@ isPhoneX;\
         [_dataSource addObject:DELETE];
         [_collectionView reloadData];
     }else if (keyboardType&CustomKeyboardTypeDigital){
-        self.currentKeyboardType =CustomKeyboardTypeNumber;
+        self.currentKeyboardType =CustomKeyboardTypeDigital;
         [_dataSource removeAllObjects];
         [_dataSource addObjectsFromArray:_numbers];
         [_dataSource insertObject:PLACE_PLACER atIndex:9];
         [_dataSource addObject:DELETE];
+        [_collectionView reloadData];
+    }else if (keyboardType&CustomKeyboardTypeCpicFunds) {
+        self.currentKeyboardType = CustomKeyboardTypeCpicFunds;
+        [_dataSource removeAllObjects];
+        [_dataSource addObjectsFromArray:_numbers];
+        [_dataSource addObjectsFromArray:_letters];
+        [_dataSource insertObject:DELETE atIndex:29];
+        [_dataSource insertObject:PLACE_PLACER atIndex:30];
+        [_dataSource insertObject:ALT atIndex:31];
         [_collectionView reloadData];
     }
 
@@ -288,9 +297,23 @@ isPhoneX;\
         cell.backgroundColor = self.cuItemDarkColor?self.cuItemDarkColor:ITEM_DARK_COLOR;
     }else{
         cell.backgroundColor =self.cuItemColor?self.cuItemColor:ITEM_COLOR;
-        if (self.uppercase&&(self.currentKeyboardType&CustomKeyboardTypeLetter)) {
+        if (self.uppercase&&(self.currentKeyboardType&(CustomKeyboardTypeLetter|CustomKeyboardTypeCpicFunds))) {
             cell.textLabel.text = [text uppercaseString];
         }
+    }
+    if ([text isEqualToString:ALT]) {
+        cell.textLabel.hidden = YES;
+        cell.imageView.hidden = NO;
+        cell.imageView.image = [UIImage imageNamed:@"s.png"];
+        cell.imageView.highlightedImage = [UIImage imageNamed:@"l.png"];
+    }else{
+        cell.textLabel.hidden = NO;
+        cell.imageView.hidden = YES;
+    }
+    if ([text isEqualToString:PLACE_PLACER]) {
+        cell.hidden = YES;
+    }else{
+        cell.hidden = NO;
     }
     return cell;
 }
@@ -315,6 +338,8 @@ isPhoneX;\
         return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
     }else if (self.currentKeyboardType&CustomKeyboardTypeDigital){
         return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
+    }else if (self.currentKeyboardType&CustomKeyboardTypeCpicFunds){
+        return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
     }
     return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
 }
