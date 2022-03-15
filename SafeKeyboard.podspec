@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   # s.resource  = "icon.png"
   # s.resources = "CustomKeyboard/pics/*.png"
   s.resource_bundles = {
-   'CustomKeyboard' => ['CustomKeyboard/Assets/*/*.png']
+   'SafeKeyboard' => ['CustomKeyboard/Assets/*/*.png']
 }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
