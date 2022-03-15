@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.license      = "MIT"
 
-  s.author             = { "jack903652" => "jack903652@163.com" }
+  s.author       = { "jack903652" => "jack903652@163.com" }
   
   s.platform     = :ios, "7.0"
 
