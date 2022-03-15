@@ -330,7 +330,7 @@ isPhoneX;\
 }
 + (UIImage *)imageInBoundleWithName:(NSString *)name {
     NSBundle *boundle = [NSBundle bundleForClass:[self class]];
-    NSBundle *currentBoundle = [NSBundle bundleWithPath:[boundle pathForResource:@"CustomKeyboard" ofType:@"bundle"]];
+    NSBundle *currentBoundle = [NSBundle bundleWithPath:[boundle pathForResource:@"SafeKeyboard" ofType:@"bundle"]];
     UIImage *image = [UIImage imageNamed:name inBundle:currentBoundle compatibleWithTraitCollection:nil];
     return image;
 }
