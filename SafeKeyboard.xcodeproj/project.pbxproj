@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3902635427E08F6400F2E422 /* update.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902634B27E08F6400F2E422 /* update.png */; };
+		3902635527E08F6400F2E422 /* del.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902634C27E08F6400F2E422 /* del.png */; };
+		3902635627E08F6400F2E422 /* del@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902634D27E08F6400F2E422 /* del@2x.png */; };
+		3902635727E08F6400F2E422 /* del@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902634E27E08F6400F2E422 /* del@3x.png */; };
+		3902635827E08F6400F2E422 /* update@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902634F27E08F6400F2E422 /* update@2x.png */; };
+		3902635927E08F6400F2E422 /* update-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902635027E08F6400F2E422 /* update-1@2x.png */; };
+		3902635A27E08F6400F2E422 /* update-1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902635127E08F6400F2E422 /* update-1@3x.png */; };
+		3902635B27E08F6400F2E422 /* update-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902635227E08F6400F2E422 /* update-1.png */; };
+		3902635C27E08F6400F2E422 /* update@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3902635327E08F6400F2E422 /* update@3x.png */; };
 		391104B21FD04BD700CCEF5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104B11FD04BD700CCEF5D /* AppDelegate.m */; };
 		391104B51FD04BD700CCEF5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104B41FD04BD700CCEF5D /* ViewController.m */; };
 		391104B81FD04BD700CCEF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391104B61FD04BD700CCEF5D /* Main.storyboard */; };
@@ -78,6 +87,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3902634B27E08F6400F2E422 /* update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update.png; sourceTree = "<group>"; };
+		3902634C27E08F6400F2E422 /* del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del.png; sourceTree = "<group>"; };
+		3902634D27E08F6400F2E422 /* del@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del@2x.png"; sourceTree = "<group>"; };
+		3902634E27E08F6400F2E422 /* del@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del@3x.png"; sourceTree = "<group>"; };
+		3902634F27E08F6400F2E422 /* update@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update@2x.png"; sourceTree = "<group>"; };
+		3902635027E08F6400F2E422 /* update-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update-1@2x.png"; sourceTree = "<group>"; };
+		3902635127E08F6400F2E422 /* update-1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update-1@3x.png"; sourceTree = "<group>"; };
+		3902635227E08F6400F2E422 /* update-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update-1.png"; sourceTree = "<group>"; };
+		3902635327E08F6400F2E422 /* update@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "update@3x.png"; sourceTree = "<group>"; };
 		391104AD1FD04BD700CCEF5D /* SafeKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391104B01FD04BD700CCEF5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		391104B11FD04BD700CCEF5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -149,6 +167,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3902634A27E08F6400F2E422 /* pics */ = {
+			isa = PBXGroup;
+			children = (
+				3902634B27E08F6400F2E422 /* update.png */,
+				3902634C27E08F6400F2E422 /* del.png */,
+				3902634D27E08F6400F2E422 /* del@2x.png */,
+				3902634E27E08F6400F2E422 /* del@3x.png */,
+				3902634F27E08F6400F2E422 /* update@2x.png */,
+				3902635027E08F6400F2E422 /* update-1@2x.png */,
+				3902635127E08F6400F2E422 /* update-1@3x.png */,
+				3902635227E08F6400F2E422 /* update-1.png */,
+				3902635327E08F6400F2E422 /* update@3x.png */,
+			);
+			path = pics;
+			sourceTree = "<group>";
+		};
 		391104A41FD04BD700CCEF5D = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +227,7 @@
 		391104E21FD04FA000CCEF5D /* CustomKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				3902634A27E08F6400F2E422 /* pics */,
 				391104E31FD04FA000CCEF5D /* CustomInputAccessoryView.h */,
 				391104E41FD04FA000CCEF5D /* CustomInputAccessoryView.m */,
 				391104E51FD04FA000CCEF5D /* CustomKeyboard.h */,
@@ -395,9 +430,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				391104BD1FD04BD700CCEF5D /* LaunchScreen.storyboard in Resources */,
+				3902635827E08F6400F2E422 /* update@2x.png in Resources */,
 				391104BA1FD04BD700CCEF5D /* Assets.xcassets in Resources */,
 				391104F11FD04FA000CCEF5D /* CustomKeyboard.strings in Resources */,
+				3902635727E08F6400F2E422 /* del@3x.png in Resources */,
+				3902635527E08F6400F2E422 /* del.png in Resources */,
+				3902635627E08F6400F2E422 /* del@2x.png in Resources */,
 				391104B81FD04BD700CCEF5D /* Main.storyboard in Resources */,
+				3902635427E08F6400F2E422 /* update.png in Resources */,
+				3902635927E08F6400F2E422 /* update-1@2x.png in Resources */,
+				3902635C27E08F6400F2E422 /* update@3x.png in Resources */,
+				3902635B27E08F6400F2E422 /* update-1.png in Resources */,
+				3902635A27E08F6400F2E422 /* update-1@3x.png in Resources */,
 				39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
