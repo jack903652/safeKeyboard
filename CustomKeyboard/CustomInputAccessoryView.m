@@ -16,11 +16,14 @@
 @interface CustomInputAccessoryView()
 @property(nonatomic,copy)void (^finishBlock)(void);
 @property(nonatomic,strong)NSMutableArray *keyboardTitles;
+///标题
+@property(nonatomic,copy)NSString *finishBtnTitle;
 @end
 @implementation CustomInputAccessoryView
--(instancetype)initWithFrame:(CGRect)frame keyboardType:(CustomKeyboardType)keyboardType{
+-(instancetype)initWithFrame:(CGRect)frame keyboardType:(CustomKeyboardType)keyboardType finishBtnTitle:(NSString *)finishBtnTitle{
     self =[super initWithFrame:frame];
     if (self) {
+        _finishBtnTitle = finishBtnTitle;
         _keyboardTitles =[NSMutableArray array];
         if (keyboardType &CustomKeyboardTypeNumber) {
             [_keyboardTitles addObject:KEYBOARD_TYPE_NUMBER];
@@ -54,17 +57,19 @@
         _textLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_textLabel];
         
-        _finishBtn =[UIButton buttonWithType:UIButtonTypeCustom];
-        _finishBtn.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, 0, 50, 40);
-        [_finishBtn setTitle:NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil) forState:UIControlStateNormal];
-        [_finishBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _finishBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_finishBtn addTarget:self action:@selector(finishAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_finishBtn];
-        
+        if (_finishBtnTitle) {
+            _finishBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+            _finishBtn.frame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, 0, 50, 40);
+            [_finishBtn setTitle:finishBtnTitle forState:UIControlStateNormal];
+            [_finishBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            _finishBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            [_finishBtn addTarget:self action:@selector(finishAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:_finishBtn];
+        }
     }
     return self;
 }
+
 -(CustomKeyboardType)keyboardFromString:(NSString *)title{
     if ([title isEqualToString:KEYBOARD_TYPE_LETTER]) {
         return CustomKeyboardTypeLetter;

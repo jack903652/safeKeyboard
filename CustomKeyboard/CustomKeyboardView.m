@@ -18,8 +18,9 @@
 #define PLACE_PLACER @""
 #define SPACE NSLocalizedStringFromTable(@"空格", @"CustomKeyboard", nil)
 #define DELETE NSLocalizedStringFromTable(@"删除", @"CustomKeyboard", nil)
+#define FINISH NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil)
 #define IDENTIFIER @"identifier"
-#define SEPERATE_SPACE 3.0
+#define SEPERATE_SPACE 6.0
 #define ITEM_WIDTH ((CGRectGetWidth([UIScreen mainScreen].bounds)-SEPERATE_SPACE*11)/10.0)
 #define NUMBER_ITEM_WIDTH ((CGRectGetWidth([UIScreen mainScreen].bounds)-SEPERATE_SPACE*4)/3)
 #define ITEM_HEIGHT (ITEM_WIDTH*4/3)
@@ -79,15 +80,19 @@ isPhoneX;\
 @property(nonatomic,assign)NSInteger length;
 
 @property(nonatomic,assign)CustomKeyboardType currentKeyboardType;
+///完成标题
+@property(nonatomic,copy)NSString *finishBtnTitle;
 @end
 
 @implementation CustomKeyboardView
--(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title length:(NSInteger)length{
+-(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
     self = [super init];
     if (self) {
+        _finishBtnTitle = finishBtnTitle;
         self.length = length;
         [view setValue:self forKey:@"inputView"];
-        CustomInputAccessoryView *accessoryView =  [[CustomInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 40) keyboardType:keyboardType];
+
+        CustomInputAccessoryView *accessoryView =  [[CustomInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 40) keyboardType:keyboardType finishBtnTitle:_finishBtnTitle];
         accessoryView.backgroundColor = BACKGROUND_COLOR;
         accessoryView.textLabel.text = title?title:@"安全键盘";
         __weak __typeof(self) wself = self;
@@ -131,13 +136,11 @@ isPhoneX;\
     return self;
 }
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title{
-    return [self initWithView:view keyboardType:keyboardType random:random title:title length:-1];
+    return [self initWithView:view keyboardType:keyboardType random:random title:title finishBtnTitle:NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil) length:-1];
 }
-+(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title{
-   return [self createWithView:view keyboardType:keyboardType random:random title:title length:-1];
-}
-+(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title length:(NSInteger)length{
-    CustomKeyboardView *c =[[CustomKeyboardView alloc] initWithView:view keyboardType:keyboardType random:random title:title length:length];
+
++(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
+    CustomKeyboardView *c =[[CustomKeyboardView alloc] initWithView:view keyboardType:keyboardType random:random title:title finishBtnTitle:finishBtnTitle length:length];
     return c;
 }
 
@@ -178,8 +181,8 @@ isPhoneX;\
         [_dataSource addObjectsFromArray:_numbers];
         [_dataSource addObjectsFromArray:_letters];
         [_dataSource insertObject:DELETE atIndex:29];
-        [_dataSource insertObject:PLACE_PLACER atIndex:30];
-        [_dataSource insertObject:ALT atIndex:31];
+        [_dataSource insertObject:ALT atIndex:30];
+        [_dataSource addObject:FINISH];
         [_collectionView reloadData];
     }
 
@@ -248,7 +251,9 @@ isPhoneX;\
         }
     }else if ([text isEqualToString:PLACE_PLACER]){
         
-    }else{
+    }else if ([text isEqualToString:FINISH]){
+        [self.textField resignFirstResponder];
+    } else{
         if (self.textField.secureText.length == self.length) {
             return;
         }
@@ -293,7 +298,7 @@ isPhoneX;\
         cell.textLabel.font = self.cuKeyFont;
     }
     NSString *text = cell.textLabel.text = self.dataSource[indexPath.item];
-    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]) {
+    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]||[text isEqualToString:FINISH]) {
         cell.backgroundColor = self.cuItemDarkColor?self.cuItemDarkColor:ITEM_DARK_COLOR;
     }else{
         cell.backgroundColor =self.cuItemColor?self.cuItemColor:ITEM_COLOR;
@@ -345,7 +350,11 @@ isPhoneX;\
     }else if (self.currentKeyboardType&CustomKeyboardTypeDigital){
         return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
     }else if (self.currentKeyboardType&CustomKeyboardTypeCpicFunds){
-        return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
+        if ([text isEqualToString:FINISH]) {
+            return CGSizeMake(ITEM_WIDTH *2 +SEPERATE_SPACE, ITEM_HEIGHT);
+        }else{        
+            return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
+        }
     }
     return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
 }
