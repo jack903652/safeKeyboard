@@ -309,13 +309,13 @@ isPhoneX;\
     if ([text isEqualToString:ALT]) {
         cell.textLabel.hidden = YES;
         cell.imageView.hidden = NO;
-        cell.imageView.image = [UIImage imageNamed:@"update.png"];
-        cell.imageView.highlightedImage = [UIImage imageNamed:@"update-1.png"];
+        cell.imageView.image = [CustomKeyboardView imageInBoundleWithName:@"update.png"];
+        cell.imageView.highlightedImage = [CustomKeyboardView imageInBoundleWithName:@"update-1.png"];
         cell.imageView.highlighted = self.uppercase;
     }else if ([text isEqualToString:DELETE]){
         cell.textLabel.hidden = YES;
         cell.imageView.hidden = NO;
-        cell.imageView.image = [UIImage imageNamed:@"del.png"];
+        cell.imageView.image = [CustomKeyboardView imageInBoundleWithName:@"del.png"];
     }else{
         cell.textLabel.hidden = NO;
         cell.imageView.hidden = YES;
@@ -328,7 +328,12 @@ isPhoneX;\
     }
     return cell;
 }
-
++ (UIImage *)imageInBoundleWithName:(NSString *)name {
+    NSBundle *boundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *currentBoundle = [NSBundle bundleWithPath:[boundle pathForResource:@"CustomKeyboard" ofType:@"bundle"]];
+    UIImage *image = [UIImage imageNamed:name inBundle:currentBoundle compatibleWithTraitCollection:nil];
+    return image;
+}
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *text = self.dataSource[indexPath.item];
     if (self.currentKeyboardType&CustomKeyboardTypeLetter) {

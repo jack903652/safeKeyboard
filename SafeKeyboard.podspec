@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SafeKeyboard"
-  s.version      = "0.1.6"
+  s.version      = "0.1.7"
   s.summary      = "3 SafeKeyboard,number,letter,special."
 
   # This description is used to generate tags and improve search results.
@@ -104,7 +104,10 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "CustomKeyboard/pics/*.png"
+  # s.resources = "CustomKeyboard/pics/*.png"
+  s.resource_bundles = {
+   'CustomKeyboard' => ['CustomKeyboard/Assets/*/*.png']
+}
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
