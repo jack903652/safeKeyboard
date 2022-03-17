@@ -20,7 +20,7 @@
     _safeTextField = [[CGSafeTextField alloc] initWithFrame:CGRectMake((w -200)/2, 50, 200, 40)];
     _safeTextField.borderStyle = UITextBorderStyleLine;
     [self.view addSubview:_safeTextField];
-    CustomKeyboardView *keyboardView = [CustomKeyboardView createWithView:_safeTextField keyboardType:CustomKeyboardTypeLetter|CustomKeyboardTypeNumber|CustomKeyboardTypeCharacters|CustomKeyboardTypeDigital|CustomKeyboardTypeCpicFunds random:YES title:@"安全键盘" finishBtnTitle:nil length:8];
+    CustomKeyboardView *keyboardView = [CustomKeyboardView createWithView:_safeTextField keyboardType:CustomKeyboardTypeLetter|CustomKeyboardTypeNumber|CustomKeyboardTypeCharacters|CustomKeyboardTypeDigital|CustomKeyboardTypeCpicFunds|CustomKeyboardTypeID random:NO title:@"安全键盘" finishBtnTitle:nil length:8];
     _safeTextField.isPlaintext = YES;
     UIColor *bColor = [UIColor colorWithWhite:0.850 alpha:1];
     keyboardView.cuBackgroundColor = bColor;

@@ -184,8 +184,14 @@ isPhoneX;\
         [_dataSource insertObject:ALT atIndex:30];
         [_dataSource addObject:FINISH];
         [_collectionView reloadData];
+    }else if (keyboardType&CustomKeyboardTypeID){
+        self.currentKeyboardType =CustomKeyboardTypeID;
+        [_dataSource removeAllObjects];
+        [_dataSource addObjectsFromArray:_numbers];
+        [_dataSource insertObject:@"X" atIndex:9];
+        [_dataSource addObject:DELETE];
+        [_collectionView reloadData];
     }
-
 }
 
 ///string to arr
@@ -360,6 +366,8 @@ isPhoneX;\
         }else{        
             return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
         }
+    }else if (self.currentKeyboardType&CustomKeyboardTypeID){
+        return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
     }
     return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
 }
