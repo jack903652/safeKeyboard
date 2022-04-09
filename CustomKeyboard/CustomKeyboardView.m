@@ -37,7 +37,7 @@ if (@available(iOS 11.0, *)) {\
 }\
 isPhoneX;\
 })
-@interface CustomKeyboardView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface CustomKeyboardView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate>
 @property(nonatomic,strong)UICollectionView *collectionView;
 
 /**
@@ -105,6 +105,7 @@ isPhoneX;\
         [view setValue:accessoryView forKey:@"inputAccessoryView"];
         _random = random;
         _textField = (UITextField *)view;
+        _textField.delegate = self;
 //        _textField.isPlaintext = NO;
 
         CGFloat delta_x = 0.0;
@@ -218,6 +219,27 @@ isPhoneX;\
 
 -(BOOL)enableInputClicksWhenVisible{
     return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSString *content = nil;
+    if (self.textField.isPlaintext) {
+        content = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    }else{
+        content = [textField.secureText stringByReplacingCharactersInRange:range withString:string];
+    }
+    if (content.length > self.length) {
+        return NO;
+    }else{
+        self.textField.secureText = content;
+        if (self.textField.isPlaintext) {
+            return YES;
+        }else{
+            self.textField.isPlaintext = NO;
+            return NO;
+//            [self.textField insertText:ASTERISK];
+        }
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

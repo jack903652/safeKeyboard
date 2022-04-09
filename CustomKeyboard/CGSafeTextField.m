@@ -18,7 +18,7 @@
 }
 */
 -(BOOL)canPerformAction:(SEL)action withSender:(id)sender{
-    return NO;
+    return YES;
 }
 
 @end
