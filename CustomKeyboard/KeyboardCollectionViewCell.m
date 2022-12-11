@@ -39,7 +39,6 @@
 //        [self addConstraint:constraints5];
 //        [self addConstraint:constraints6];
         _imageView.hidden = YES;
-        
 
         self.layer.masksToBounds = NO;
 //        self.layer.cornerRadius = 8;

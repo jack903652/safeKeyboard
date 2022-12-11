@@ -89,6 +89,7 @@ isPhoneX;\
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
     self = [super init];
     if (self) {
+        _allowTapFeedBack = YES;
         _finishBtnTitle = finishBtnTitle;
         self.length = length;
         [view setValue:self forKey:@"inputView"];
@@ -120,6 +121,7 @@ isPhoneX;\
         _collectionView.backgroundColor = BACKGROUND_COLOR;
         _collectionView.delegate =self;
         _collectionView.dataSource =self;
+        _collectionView.delaysContentTouches = NO;
         [_collectionView registerClass:[KeyboardCollectionViewCell class] forCellWithReuseIdentifier:IDENTIFIER];
         _dataSource =[NSMutableArray array];
         self.uppercase = NO;
@@ -252,6 +254,31 @@ isPhoneX;\
     }
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    KeyboardCollectionViewCell *cell = (KeyboardCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    UIColor *feedBackColor = [UIColor whiteColor];
+    if (self.allowTapFeedBack){
+        feedBackColor = [UIColor grayColor];
+    }else{
+        feedBackColor = [UIColor whiteColor];
+    }
+    if (@available(iOS 11.0, *)) {
+        if([UIScreen mainScreen].isCaptured){
+            feedBackColor = [UIColor whiteColor];
+        }
+    }
+    [cell setBackgroundColor:feedBackColor];
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    KeyboardCollectionViewCell *cell = (KeyboardCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    [cell setBackgroundColor:[UIColor whiteColor]];
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [[UIDevice currentDevice] playInputClick];
     NSString *text = self.dataSource[indexPath.item];
@@ -340,9 +367,11 @@ isPhoneX;\
         cell.backgroundColor = self.cuItemDarkColor?self.cuItemDarkColor:ITEM_DARK_COLOR;
     }else{
         cell.backgroundColor =self.cuItemColor?self.cuItemColor:ITEM_COLOR;
-        if (self.uppercase&&[self.dataSource containsObject:ALT]) {
-            cell.textLabel.text = [text uppercaseString];
-        }
+    }
+    if (self.uppercase&&[self.dataSource containsObject:ALT]) {
+        cell.textLabel.text = [text uppercaseString];
+    }else{
+        cell.textLabel.text = [text lowercaseString];
     }
     if ([text isEqualToString:ALT]) {
         cell.textLabel.hidden = YES;
@@ -355,8 +384,11 @@ isPhoneX;\
         cell.imageView.hidden = NO;
         cell.imageView.image = [CustomKeyboardView imageInBoundleWithName:@"del.png"];
         cell.imageView.highlightedImage = [CustomKeyboardView imageInBoundleWithName:@"del.png"];
+        cell.imageView.highlighted = NO;
     }else{
         cell.textLabel.hidden = NO;
+//        cell.imageView.image = nil;
+//        cell.imageView.highlightedImage = nil;
         cell.imageView.hidden = YES;
     }
     

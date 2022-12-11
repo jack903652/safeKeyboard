@@ -33,7 +33,8 @@
 @property(nonatomic,strong)UIColor *accessoryBackgroundColor;
 ///accessoryFont
 @property(nonatomic,strong)UIFont *accessoryFont;
-
+///是否可以回显
+@property(nonatomic,assign)BOOL allowTapFeedBack;
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title;
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
 
