@@ -13,6 +13,7 @@
 #define KEYBOARD_TYPE_DIGITAL @"123"
 #define KEYBOARD_TYPE_CPICFUNDS @"cpicFunds"
 #define KEYBOARD_TYPE_ID @"id"
+#define KEYBOARD_TYPE_ABC @"ABC"
 
 @interface CustomInputAccessoryView()
 @property(nonatomic,copy)void (^finishBlock)(void);
@@ -43,6 +44,9 @@
         }
         if (keyboardType &CustomKeyboardTypeID) {
             [_keyboardTitles addObject:KEYBOARD_TYPE_ID];
+        }
+        if (keyboardType &CustomKeyboardTypeABC) {
+            [_keyboardTitles addObject:KEYBOARD_TYPE_ABC];
         }
 
         if (_keyboardTitles.count >1) {
@@ -87,7 +91,9 @@
         return CustomKeyboardTypeCpicFunds;
     } else if ([title isEqualToString:KEYBOARD_TYPE_ID]){
         return CustomKeyboardTypeID;
-    } else{
+    }else if ([title isEqualToString:KEYBOARD_TYPE_ABC]){
+        return CustomKeyboardTypeABC;
+    }  else{
         return CustomKeyboardTypeLetter;
     }
 }

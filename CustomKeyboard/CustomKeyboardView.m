@@ -16,6 +16,7 @@
 #define POT @"."
 #define ALT @"Cap"
 #define PLACE_PLACER @""
+#define HALF_PLACE_PLACER @"HPP"
 #define SPACE NSLocalizedStringFromTable(@"空格", @"CustomKeyboard", nil)
 #define DELETE NSLocalizedStringFromTable(@"删除", @"CustomKeyboard", nil)
 #define FINISH NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil)
@@ -192,6 +193,15 @@ isPhoneX;\
         [_dataSource insertObject:@"X" atIndex:9];
         [_dataSource addObject:DELETE];
         [_collectionView reloadData];
+    }else if (keyboardType&CustomKeyboardTypeABC){
+        self.currentKeyboardType =CustomKeyboardTypeABC;
+        [_dataSource removeAllObjects];
+        [_dataSource addObjectsFromArray:_letters];
+        [_dataSource insertObject:HALF_PLACE_PLACER atIndex:10];
+        [_dataSource insertObject:HALF_PLACE_PLACER atIndex:20];
+        [_dataSource insertObject:ALT atIndex:21];
+        [_dataSource addObject:DELETE];
+        [_collectionView reloadData];
     }
 }
 
@@ -277,7 +287,7 @@ isPhoneX;\
             self.textField.secureText = temp;
             [self.textField deleteBackward];
         }
-    }else if ([text isEqualToString:PLACE_PLACER]){
+    }else if ([text isEqualToString:PLACE_PLACER]||[text isEqualToString:HALF_PLACE_PLACER]){
         
     }else if ([text isEqualToString:FINISH]){
         [self.textField resignFirstResponder];
@@ -326,11 +336,11 @@ isPhoneX;\
         cell.textLabel.font = self.cuKeyFont;
     }
     NSString *text = cell.textLabel.text = self.dataSource[indexPath.item];
-    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]||[text isEqualToString:FINISH]) {
+    if ([text isEqualToString:ALT]||[text isEqualToString:SPACE]|| [text isEqualToString:DELETE]||[text isEqualToString:PLACE_PLACER]||[text isEqualToString:FINISH]||[text isEqualToString:HALF_PLACE_PLACER]) {
         cell.backgroundColor = self.cuItemDarkColor?self.cuItemDarkColor:ITEM_DARK_COLOR;
     }else{
         cell.backgroundColor =self.cuItemColor?self.cuItemColor:ITEM_COLOR;
-        if (self.uppercase&&(self.currentKeyboardType&(CustomKeyboardTypeLetter|CustomKeyboardTypeCpicFunds))) {
+        if (self.uppercase&&[self.dataSource containsObject:ALT]) {
             cell.textLabel.text = [text uppercaseString];
         }
     }
@@ -344,12 +354,13 @@ isPhoneX;\
         cell.textLabel.hidden = YES;
         cell.imageView.hidden = NO;
         cell.imageView.image = [CustomKeyboardView imageInBoundleWithName:@"del.png"];
+        cell.imageView.highlightedImage = [CustomKeyboardView imageInBoundleWithName:@"del.png"];
     }else{
         cell.textLabel.hidden = NO;
         cell.imageView.hidden = YES;
     }
     
-    if ([text isEqualToString:PLACE_PLACER]) {
+    if ([text isEqualToString:PLACE_PLACER]||[text isEqualToString:HALF_PLACE_PLACER]) {
         cell.hidden = YES;
     }else{
         cell.hidden = NO;
@@ -390,14 +401,36 @@ isPhoneX;\
         }
     }else if (self.currentKeyboardType&CustomKeyboardTypeID){
         return CGSizeMake(NUMBER_ITEM_WIDTH, ITEM_HEIGHT);
+    }else if (self.currentKeyboardType&CustomKeyboardTypeABC){
+        if([text isEqualToString:HALF_PLACE_PLACER]){
+            return CGSizeMake((ITEM_WIDTH-SEPERATE_SPACE)/2, ITEM_HEIGHT);
+        } else if ([text isEqualToString:ALT]||[text isEqualToString:DELETE]) {
+            return CGSizeMake(ITEM_WIDTH +SEPERATE_SPACE + (ITEM_WIDTH-SEPERATE_SPACE)/2, ITEM_HEIGHT);
+        }else{
+            return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
+        }
     }
     return CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE);
+    if (self.currentKeyboardType&CustomKeyboardTypeABC) {
+        return UIEdgeInsetsMake(SEPERATE_SPACE*3, SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE);
+//        if(section == 2){
+//            return UIEdgeInsetsMake(SEPERATE_SPACE, SEPERATE_SPACE*2, SEPERATE_SPACE, SEPERATE_SPACE*2);
+//        }else{
+//            return UIEdgeInsetsMake(SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE);
+//        }
+    }else{
+        return UIEdgeInsetsMake(SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE, SEPERATE_SPACE);
+    }
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return SEPERATE_SPACE;
+    if (self.currentKeyboardType&CustomKeyboardTypeABC) {
+        return SEPERATE_SPACE*3;
+    }
+    else{
+        return SEPERATE_SPACE;
+    }
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return SEPERATE_SPACE-0.001;

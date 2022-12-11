@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SafeKeyboard"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "3 SafeKeyboard,number,letter,special."
 
   s.description  = "a easy way to use 4 kinds of safeKeyboard"
