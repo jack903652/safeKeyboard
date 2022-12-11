@@ -20,5 +20,8 @@ Pod::Spec.new do |s|
   s.resources    = "CustomKeyboard/*.bundle"
 
   s.requires_arc = true
+  
+  s.user_target_xcconfig = { "GENERATE_INFOPLIST_FILE" => 'YES' }
+  s.pod_target_xcconfig = { "GENERATE INFOPLIST FILE" => 'YES' }
 
 end
