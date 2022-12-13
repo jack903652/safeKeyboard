@@ -10,8 +10,8 @@
 #define KEYBOARD_TYPE_LETTER @"Abc"
 #define KEYBOARD_TYPE_CHARACTER @"#+="
 #define KEYBOARD_TYPE_NUMBER @"12."
-#define KEYBOARD_TYPE_DIGITAL @"123"
-#define KEYBOARD_TYPE_CPICFUNDS @"cpicFunds"
+#define KEYBOARD_TYPE_DIGITAL @"数字"
+#define KEYBOARD_TYPE_CPICFUNDS @"字母"
 #define KEYBOARD_TYPE_ID @"id"
 #define KEYBOARD_TYPE_ABC @"ABC"
 
@@ -51,15 +51,15 @@
 
         if (_keyboardTitles.count >1) {
             _changeTypeBtn =[UIButton buttonWithType:UIButtonTypeCustom];
-            _changeTypeBtn.frame = CGRectMake(0, 0, 50, 40);
+            _changeTypeBtn.frame = CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) -50-10), 4, 50, 40);
             [_changeTypeBtn setTitle:_keyboardTitles[1] forState:UIControlStateNormal];
             [_changeTypeBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            _changeTypeBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+            _changeTypeBtn.titleLabel.font = [UIFont systemFontOfSize:18];
             [_changeTypeBtn addTarget:self action:@selector(changeTypeAction:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:_changeTypeBtn];
         }
         
-        _textLabel =[[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) -200)/2, 0, 200, CGRectGetHeight(self.bounds))];
+        _textLabel =[[UILabel alloc] initWithFrame:CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) -200)/2, 4, 200, CGRectGetHeight(self.bounds))];
         _textLabel.font = [UIFont systemFontOfSize:15];
         _textLabel.textColor = [UIColor whiteColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
