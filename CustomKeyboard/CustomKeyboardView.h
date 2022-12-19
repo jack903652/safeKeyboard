@@ -35,6 +35,8 @@
 @property(nonatomic,strong)UIFont *accessoryFont;
 ///是否可以回显
 @property(nonatomic,assign)BOOL allowTapFeedBack;
+///回显字体
+@property(nonatomic,strong)UIFont *tipFont;
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title;
 -(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
 
@@ -49,4 +51,6 @@
  @return 实例
  */
 +(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
+
++ (UIImage *)imageInBoundleWithName:(NSString *)name;
 @end

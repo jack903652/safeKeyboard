@@ -37,6 +37,8 @@
 		3913E4C221C8C5C10044960E /* UITextField+Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104ED1FD04FA000CCEF5D /* UITextField+Security.m */; };
 		3913E4C321C8C5C10044960E /* CGSafeTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 391104F51FD04FC400CCEF5D /* CGSafeTextField.m */; };
 		3919123122642495008FF0BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919123022642495008FF0BC /* CoreGraphics.framework */; };
+		392CA1CF294861E00040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
+		392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
 		39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,8 @@
 		39127D0621C8BD0A00F452A7 /* SafeKeyboardKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeKeyboardKit.h; sourceTree = "<group>"; };
 		39127D0721C8BD0A00F452A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3919123022642495008FF0BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		392CA1CD294861E00040FCDE /* KeyTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyTipView.h; sourceTree = "<group>"; };
+		392CA1CE294861E00040FCDE /* KeyTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyTipView.m; sourceTree = "<group>"; };
 		3951A6DE22642D2F00FBDF96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeKeyboard.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +204,8 @@
 				391104E51FD04FA000CCEF5D /* CustomKeyboard.h */,
 				391104E61FD04FA000CCEF5D /* CustomKeyboardView.h */,
 				391104E71FD04FA000CCEF5D /* CustomKeyboardView.m */,
+				392CA1CD294861E00040FCDE /* KeyTipView.h */,
+				392CA1CE294861E00040FCDE /* KeyTipView.m */,
 				391104E81FD04FA000CCEF5D /* CustomKeyboard.strings */,
 				391104EA1FD04FA000CCEF5D /* KeyboardCollectionViewCell.h */,
 				391104EB1FD04FA000CCEF5D /* KeyboardCollectionViewCell.m */,
@@ -442,6 +448,7 @@
 				391104B21FD04BD700CCEF5D /* AppDelegate.m in Sources */,
 				391104F61FD04FC400CCEF5D /* CGSafeTextField.m in Sources */,
 				391104EF1FD04FA000CCEF5D /* CustomInputAccessoryView.m in Sources */,
+				392CA1CF294861E00040FCDE /* KeyTipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */,
 				3913E4BF21C8C5C10044960E /* CustomInputAccessoryView.m in Sources */,
 				3913E4C021C8C5C10044960E /* CustomKeyboardView.m in Sources */,
 				3913E4C121C8C5C10044960E /* KeyboardCollectionViewCell.m in Sources */,

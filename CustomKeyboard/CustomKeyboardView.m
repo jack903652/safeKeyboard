@@ -9,6 +9,7 @@
 #import "CustomKeyboardView.h"
 #import "KeyboardCollectionViewCell.h"
 #import "UITextField+Security.h"
+#import "KeyTipView.h"
 
 #define NUMBERS @"1234567890"
 #define LETTERS @"qwertyuiopasdfghjklzxcvbnm"
@@ -83,6 +84,8 @@ isPhoneX;\
 @property(nonatomic,assign)CustomKeyboardType currentKeyboardType;
 ///完成标题
 @property(nonatomic,copy)NSString *finishBtnTitle;
+
+@property(nonatomic,strong)KeyTipView *tipView;
 @end
 
 @implementation CustomKeyboardView
@@ -136,6 +139,9 @@ isPhoneX;\
         _specialLetters = [self stringToArr:SPECIAL_CHARACTERS];
         ///
         [self reloadKeyBoardViewWithType:keyboardType];
+        _tipView = [[KeyTipView alloc] initWithFrame:CGRectZero];
+        _tipView.hidden = YES;
+        [self addSubview:_tipView];
     }
     return self;
 }
@@ -259,6 +265,11 @@ isPhoneX;\
     UIColor *feedBackColor = [UIColor whiteColor];
     if (self.allowTapFeedBack){
         feedBackColor = [UIColor grayColor];
+        NSString *hint =  cell.textLabel.text;
+        if(self.currentKeyboardType&CustomKeyboardTypeLetter || self.currentKeyboardType&CustomKeyboardTypeCpicFunds ||self.currentKeyboardType&CustomKeyboardTypeABC || self.currentKeyboardType&CustomKeyboardTypeCharacters)
+        if ([_numbers containsObject:hint.lowercaseString]||[_letters containsObject:hint.lowercaseString]){
+            [self showTipWithRect:cell.frame hint:hint];
+        }
     }else{
         feedBackColor = [UIColor whiteColor];
     }
@@ -277,6 +288,7 @@ isPhoneX;\
 - (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
     KeyboardCollectionViewCell *cell = (KeyboardCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     [cell setBackgroundColor:[UIColor whiteColor]];
+    [self dismissKeyTipView];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -509,5 +521,27 @@ isPhoneX;\
     _accessoryBackgroundColor =accessoryBackgroundColor;
     CustomInputAccessoryView *view = (CustomInputAccessoryView*)self.textField.inputAccessoryView;
     view.backgroundColor = accessoryBackgroundColor;
+}
+- (void)setTipFont:(UIFont *)tipFont{
+    _tipFont = tipFont;
+    _tipView.tLabel.font = tipFont;
+}
+
+
+-(void)showTipWithRect:(CGRect)rect hint:(NSString *)hint{
+    CGFloat HWRatio = 157.0/50.0;
+    CGFloat height = rect.size.width * HWRatio;
+    CGRect frame = CGRectMake(rect.origin.x - (84.0/50.0*rect.size.width-rect.size.width)/2, rect.origin.y-height+rect.size.height, rect.size.width*84.0/50.0, height);
+    [_tipView updateFrame:frame];
+    _tipView.tLabel.text = hint;
+    if(_tipFont){
+        _tipView.tLabel.font = _tipFont;
+    }
+    [UIView animateWithDuration:0.1 animations:^{
+        self.tipView.hidden = NO;
+    }];
+}
+-(void)dismissKeyTipView{
+    self.tipView.hidden = YES;
 }
 @end

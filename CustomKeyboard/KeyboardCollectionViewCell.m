@@ -25,7 +25,7 @@
         self.textLabel.font = [UIFont systemFontOfSize:15];
         self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.layer.masksToBounds = YES;
-        self.layer.cornerRadius = 2.5;
+        self.layer.cornerRadius = 7;
         
         _imageView = [[UIImageView alloc] init];
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
