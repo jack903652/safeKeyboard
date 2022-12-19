@@ -39,6 +39,7 @@
 		3919123122642495008FF0BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919123022642495008FF0BC /* CoreGraphics.framework */; };
 		392CA1CF294861E00040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
 		392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
+		39A35089295072190026F188 /* KeyTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = 392CA1CD294861E00040FCDE /* KeyTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +268,7 @@
 				39127D1321C8BD6100F452A7 /* CustomKeyboardView.h in Headers */,
 				39127D1521C8BD6100F452A7 /* UITextField+Security.h in Headers */,
 				39127D1621C8BD6100F452A7 /* CGSafeTextField.h in Headers */,
+				39A35089295072190026F188 /* KeyTipView.h in Headers */,
 				39127D1421C8BD6100F452A7 /* KeyboardCollectionViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,12 +474,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */,
 				3913E4BF21C8C5C10044960E /* CustomInputAccessoryView.m in Sources */,
 				3913E4C021C8C5C10044960E /* CustomKeyboardView.m in Sources */,
 				3913E4C121C8C5C10044960E /* KeyboardCollectionViewCell.m in Sources */,
 				3913E4C221C8C5C10044960E /* UITextField+Security.m in Sources */,
 				3913E4C321C8C5C10044960E /* CGSafeTextField.m in Sources */,
+				392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
