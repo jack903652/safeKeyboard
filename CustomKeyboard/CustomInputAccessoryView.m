@@ -27,7 +27,6 @@
     if (self) {
         _finishBtnTitle = finishBtnTitle;
         _keyboardTitles =[NSMutableArray array];
-        NSArray *keyboardTypeNames = @[KEYBOARD_TYPE_NUMBER,KEYBOARD_TYPE_LETTER,KEYBOARD_TYPE_CHARACTER,KEYBOARD_TYPE_DIGITAL,KEYBOARD_TYPE_CPICFUNDS,KEYBOARD_TYPE_ID,KEYBOARD_TYPE_ABC];
         for (int i = 0; i<keyboardTypes.count; i++) {
             NSNumber *number = keyboardTypes[i];
             CustomKeyboardType type = number.intValue;

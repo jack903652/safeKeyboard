@@ -21,4 +21,4 @@ FOUNDATION_EXPORT const unsigned char SafeKeyboardKitVersionString[];
 #import <SafeKeyboardKit/CustomKeyboardView.h>
 #import <SafeKeyboardKit/UITextField+Security.h>
 #import <SafeKeyboardKit/CGSafeTextField.h>
-
+#import <SafeKeyboardKit/KeyTipView.h>

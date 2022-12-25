@@ -44,7 +44,7 @@
  实例方法
 
  @param view textField
- @param keyboardType 键盘
+ @param keyboardTypes 键盘
  @param random 是否随机
  @param title 键盘标题
  @param length 是否限制长度,不限制传-1
