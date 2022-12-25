@@ -21,7 +21,7 @@
     _safeTextField.backgroundColor = [UIColor blueColor];
     _safeTextField.borderStyle = UITextBorderStyleLine;
     [self.view addSubview:_safeTextField];
-    CustomKeyboardView *keyboardView = [CustomKeyboardView createWithView:_safeTextField keyboardType:CustomKeyboardTypeCpicFunds|CustomKeyboardTypeDigital random:NO title:@"安全键盘" finishBtnTitle:nil length:8];
+    CustomKeyboardView *keyboardView = [CustomKeyboardView createWithView:_safeTextField keyboardTypes:@[@(CustomKeyboardTypeCpicFunds),@(CustomKeyboardTypeDigital)] random:NO title:@"安全键盘" finishBtnTitle:nil length:8];
     keyboardView.allowTapFeedBack = YES;
     _safeTextField.isPlaintext = YES;
     UIColor *bColor = [UIColor colorWithWhite:0.850 alpha:1];

@@ -37,8 +37,8 @@
 @property(nonatomic,assign)BOOL allowTapFeedBack;
 ///回显字体
 @property(nonatomic,strong)UIFont *tipFont;
--(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title;
--(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
+-(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title;
+-(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
 
 /**
  实例方法
@@ -50,7 +50,7 @@
  @param length 是否限制长度,不限制传-1
  @return 实例
  */
-+(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
++(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length;
 
 + (UIImage *)imageInBoundleWithName:(NSString *)name;
 @end

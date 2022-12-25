@@ -22,31 +22,19 @@
 @property(nonatomic,copy)NSString *finishBtnTitle;
 @end
 @implementation CustomInputAccessoryView
--(instancetype)initWithFrame:(CGRect)frame keyboardType:(CustomKeyboardType)keyboardType finishBtnTitle:(NSString *)finishBtnTitle{
+-(instancetype)initWithFrame:(CGRect)frame keyboardTypes:(NSArray *)keyboardTypes finishBtnTitle:(NSString *)finishBtnTitle{
     self =[super initWithFrame:frame];
     if (self) {
         _finishBtnTitle = finishBtnTitle;
         _keyboardTitles =[NSMutableArray array];
-        if (keyboardType &CustomKeyboardTypeNumber) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_NUMBER];
-        }
-        if (keyboardType &CustomKeyboardTypeLetter) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_LETTER];
-        }
-        if (keyboardType &CustomKeyboardTypeCharacters) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_CHARACTER];
-        }
-        if (keyboardType &CustomKeyboardTypeDigital) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_DIGITAL];
-        }
-        if (keyboardType &CustomKeyboardTypeCpicFunds) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_CPICFUNDS];
-        }
-        if (keyboardType &CustomKeyboardTypeID) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_ID];
-        }
-        if (keyboardType &CustomKeyboardTypeABC) {
-            [_keyboardTitles addObject:KEYBOARD_TYPE_ABC];
+        NSArray *keyboardTypeNames = @[KEYBOARD_TYPE_NUMBER,KEYBOARD_TYPE_LETTER,KEYBOARD_TYPE_CHARACTER,KEYBOARD_TYPE_DIGITAL,KEYBOARD_TYPE_CPICFUNDS,KEYBOARD_TYPE_ID,KEYBOARD_TYPE_ABC];
+        for (int i = 0; i<keyboardTypes.count; i++) {
+            NSNumber *number = keyboardTypes[i];
+            CustomKeyboardType type = number.intValue;
+            NSString * title = [self keyboardStringFromType:type];
+            if (title != nil){
+                [_keyboardTitles addObject:title];
+            }
         }
 
         if (_keyboardTitles.count >1) {
@@ -96,6 +84,33 @@
     }  else{
         return CustomKeyboardTypeLetter;
     }
+}
+
+-(NSString *)keyboardStringFromType:(CustomKeyboardType)keyboardType{
+    if (keyboardType &CustomKeyboardTypeNumber) {
+        return KEYBOARD_TYPE_NUMBER;
+    }
+    else if (keyboardType &CustomKeyboardTypeLetter) {
+        return KEYBOARD_TYPE_LETTER;
+    }
+    else if (keyboardType &CustomKeyboardTypeCharacters) {
+        return KEYBOARD_TYPE_CHARACTER;
+    }
+    else if (keyboardType &CustomKeyboardTypeDigital) {
+        return KEYBOARD_TYPE_DIGITAL;
+    }
+    else if (keyboardType &CustomKeyboardTypeCpicFunds) {
+        return KEYBOARD_TYPE_CPICFUNDS;
+    }
+    else if (keyboardType &CustomKeyboardTypeID) {
+        return KEYBOARD_TYPE_ID;
+    }
+    else if (keyboardType &CustomKeyboardTypeABC) {
+        return KEYBOARD_TYPE_ABC;
+    }else{
+        return nil;
+    }
+    
 }
 -(void)changeTypeAction:(UIButton *)sender{
     NSString *text = [sender titleForState:UIControlStateNormal];

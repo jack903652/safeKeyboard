@@ -89,7 +89,7 @@ isPhoneX;\
 @end
 
 @implementation CustomKeyboardView
--(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
+-(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
     self = [super init];
     if (self) {
         _allowTapFeedBack = YES;
@@ -97,7 +97,7 @@ isPhoneX;\
         self.length = length;
         [view setValue:self forKey:@"inputView"];
 
-        CustomInputAccessoryView *accessoryView =  [[CustomInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 40) keyboardType:keyboardType finishBtnTitle:_finishBtnTitle];
+        CustomInputAccessoryView *accessoryView = [[CustomInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), 40) keyboardTypes:keyboardTypes finishBtnTitle:_finishBtnTitle];
         accessoryView.backgroundColor = BACKGROUND_COLOR;
         accessoryView.textLabel.text = title?title:@"安全键盘";
         __weak __typeof(self) wself = self;
@@ -138,19 +138,20 @@ isPhoneX;\
         }
         _specialLetters = [self stringToArr:SPECIAL_CHARACTERS];
         ///
-        [self reloadKeyBoardViewWithType:keyboardType];
+        NSNumber *number = keyboardTypes.firstObject;
+        [self reloadKeyBoardViewWithType:number.intValue];
         _tipView = [[KeyTipView alloc] initWithFrame:CGRectZero];
         _tipView.hidden = YES;
         [self addSubview:_tipView];
     }
     return self;
 }
--(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title{
-    return [self initWithView:view keyboardType:keyboardType random:random title:title finishBtnTitle:NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil) length:-1];
+-(instancetype)initWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title{
+    return [self initWithView:view keyboardTypes:keyboardTypes random:random title:title finishBtnTitle:NSLocalizedStringFromTable(@"完成", @"CustomKeyboard", nil) length:-1];
 }
 
-+(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardType:(CustomKeyboardType)keyboardType random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
-    CustomKeyboardView *c =[[CustomKeyboardView alloc] initWithView:view keyboardType:keyboardType random:random title:title finishBtnTitle:finishBtnTitle length:length];
++(instancetype)createWithView:(UIView<UIKeyInput> *)view keyboardTypes:(NSArray *)keyboardTypes random:(BOOL)random title:(NSString *)title finishBtnTitle:(NSString *)finishBtnTitle length:(NSInteger)length{
+    CustomKeyboardView *c =[[CustomKeyboardView alloc] initWithView:view keyboardTypes:keyboardTypes random:random title:title finishBtnTitle:finishBtnTitle length:length];
     return c;
 }
 
