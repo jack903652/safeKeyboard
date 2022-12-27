@@ -269,7 +269,11 @@ isPhoneX;\
         NSString *hint =  cell.textLabel.text;
         if(self.currentKeyboardType&CustomKeyboardTypeLetter || self.currentKeyboardType&CustomKeyboardTypeCpicFunds ||self.currentKeyboardType&CustomKeyboardTypeABC || self.currentKeyboardType&CustomKeyboardTypeCharacters)
         if ([_numbers containsObject:hint.lowercaseString]||[_letters containsObject:hint.lowercaseString]){
-            [self showTipWithRect:cell.frame hint:hint];
+            if (@available(iOS 11.0, *)) {
+                if(![UIScreen mainScreen].isCaptured){
+                    [self showTipWithRect:cell.frame hint:hint];
+                }
+            }
         }
     }else{
         feedBackColor = [UIColor whiteColor];
