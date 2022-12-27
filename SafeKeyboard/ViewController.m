@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CustomKeyboard.h"
+#import "SafeKeyboard-Swift.h"
 @interface ViewController ()
 @property(nonatomic,strong)CGSafeTextField *safeTextField;
 @end
@@ -63,6 +64,8 @@
 -(void)click1:(UIButton *)btn{
     NSLog(@"secureText:%@",self.safeTextField.secureText);
     NSLog(@"text:%@",self.safeTextField.text);
+    SViewController *s = [[SViewController alloc] init];
+    [self presentViewController:s animated:YES completion:nil];
 }
 -(void)tAction:(UITextField *)textField{
     NSLog(@"%@",textField.text);

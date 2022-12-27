@@ -39,6 +39,7 @@
 		3919123122642495008FF0BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919123022642495008FF0BC /* CoreGraphics.framework */; };
 		392CA1CF294861E00040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
 		392CA1D029488ED80040FCDE /* KeyTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 392CA1CE294861E00040FCDE /* KeyTipView.m */; };
+		393EE4892958648500D4FC48 /* SViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393EE4882958648500D4FC48 /* SViewController.swift */; };
 		39A35089295072190026F188 /* KeyTipView.h in Headers */ = {isa = PBXBuildFile; fileRef = 392CA1CD294861E00040FCDE /* KeyTipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39D6045127C6354B0065B0F6 /* SafeKeyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */; };
 /* End PBXBuildFile section */
@@ -118,6 +119,8 @@
 		3919123022642495008FF0BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		392CA1CD294861E00040FCDE /* KeyTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyTipView.h; sourceTree = "<group>"; };
 		392CA1CE294861E00040FCDE /* KeyTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyTipView.m; sourceTree = "<group>"; };
+		393EE4872958648400D4FC48 /* SafeKeyboard-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeKeyboard-Bridging-Header.h"; sourceTree = "<group>"; };
+		393EE4882958648500D4FC48 /* SViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SViewController.swift; sourceTree = "<group>"; };
 		3951A6DE22642D2F00FBDF96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39D6045027C6354B0065B0F6 /* SafeKeyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SafeKeyboard.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,11 +191,13 @@
 				391104B11FD04BD700CCEF5D /* AppDelegate.m */,
 				391104B31FD04BD700CCEF5D /* ViewController.h */,
 				391104B41FD04BD700CCEF5D /* ViewController.m */,
+				393EE4882958648500D4FC48 /* SViewController.swift */,
 				391104B61FD04BD700CCEF5D /* Main.storyboard */,
 				391104B91FD04BD700CCEF5D /* Assets.xcassets */,
 				391104BB1FD04BD700CCEF5D /* LaunchScreen.storyboard */,
 				391104BE1FD04BD700CCEF5D /* Info.plist */,
 				391104BF1FD04BD700CCEF5D /* main.m */,
+				393EE4872958648400D4FC48 /* SafeKeyboard-Bridging-Header.h */,
 			);
 			path = SafeKeyboard;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				TargetAttributes = {
 					391104AC1FD04BD700CCEF5D = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1400;
 						ProvisioningStyle = Automatic;
 					};
 					3911B5FC229FB1D0000AA1A3 = {
@@ -448,6 +454,7 @@
 				391104F01FD04FA000CCEF5D /* CustomKeyboardView.m in Sources */,
 				391104F21FD04FA000CCEF5D /* KeyboardCollectionViewCell.m in Sources */,
 				391104B21FD04BD700CCEF5D /* AppDelegate.m in Sources */,
+				393EE4892958648500D4FC48 /* SViewController.swift in Sources */,
 				391104F61FD04FC400CCEF5D /* CGSafeTextField.m in Sources */,
 				391104EF1FD04FA000CCEF5D /* CustomInputAccessoryView.m in Sources */,
 				392CA1CF294861E00040FCDE /* KeyTipView.m in Sources */,
@@ -646,6 +653,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
@@ -654,6 +662,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeKeyboard/SafeKeyboard-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -662,6 +673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
@@ -670,6 +682,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SafeKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeKeyboard/SafeKeyboard-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -677,6 +691,7 @@
 		3911B604229FB1D0000AA1A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
@@ -695,6 +710,7 @@
 		3911B605229FB1D0000AA1A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D9Q8EZY8PR;
@@ -712,6 +728,7 @@
 		3911B613229FB1E1000AA1A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -731,6 +748,7 @@
 		3911B614229FB1E1000AA1A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
